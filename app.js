@@ -8,10 +8,7 @@ const User = require('./models/user');
 const Admin = require('./models/admin');
 
 const bot = new TelegramBot(process.env.TOKEN, {
-});
-
-bot.setWebHook(process.env.URL, {
-  certificate: process.env.CRT, // Path to your crt.pem
+  polling: true
 });
 
 sequelize.sync();
